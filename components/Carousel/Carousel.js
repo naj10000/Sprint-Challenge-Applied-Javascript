@@ -31,7 +31,7 @@ function carouselComponent(x){
   const computerImg = document.createElement('img');
   const treesImg = document.createElement('img');
   const turnTableImg = document.createElement('img');
-  const current = 0;
+  
 
   /// add classes
 
@@ -60,23 +60,20 @@ function carouselComponent(x){
 
   
   
-  const imgs = [mountainImg, computerImg, treesImg, turnTableImg]
   
-  function slideLeft(){
-    imgs[current -1].style.display = 'block';
-    current--;
-  }
+  
+  
 
 
   rightBtnDiv.addEventListener('click',()=>{
-
+    const imgs = [mountainImg, computerImg, treesImg, turnTableImg]
+      imgs.forEach((img) => img.style.display ="block")
   })
 
   leftBtnDiv.addEventListener('click', ()=>{
-      if(current ===0){
-        current = imgs.length;
-      }
-      slideLeft();
+    const current = 0
+    const imgs = [mountainImg, computerImg, treesImg, turnTableImg]
+      imgs.forEach((img) => img.style.display ="block")
   })
 
   console.log(carousel);
