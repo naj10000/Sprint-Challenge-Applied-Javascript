@@ -17,3 +17,72 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+
+function carouselComponent(x){
+
+  //create Elements
+  const carousel = document.createElement('div');
+  const leftBtnDiv = document.createElement('div');
+  // const leftBtn = document.createElement('button');
+  const rightBtnDiv = document.createElement('div');
+  // const rightBtn = document.createElement('button');
+  const mountainImg = document.createElement('img');
+  const computerImg = document.createElement('img');
+  const treesImg = document.createElement('img');
+  const turnTableImg = document.createElement('img');
+  
+
+  /// add classes
+
+  carousel.classList.add('carousel');
+  leftBtnDiv.classList.add('left-button');
+  rightBtnDiv.classList.add('right-button');
+
+  ///content
+
+  // leftBtn.textContent = "button";
+  // rightBtn.textContent = "button";
+  mountainImg.setAttribute('src', './assets/carousel/mountains.jpeg');
+  computerImg.setAttribute('src', "./assets/carousel/computer.jpeg");
+  treesImg.setAttribute('src', "./assets/carousel/trees.jpeg" );
+  turnTableImg.setAttribute('src', "./assets/carousel/turntable.jpeg");
+  
+  //append 
+  carousel.append(leftBtnDiv);
+  carousel.append(rightBtnDiv);
+  // leftBtnDiv.appendChild(leftBtn);
+  // rightBtnDiv.appendChild(rightBtn);
+  carousel.appendChild(mountainImg);
+  carousel.appendChild(computerImg);
+  carousel.appendChild(treesImg);
+  carousel.appendChild(turnTableImg);
+
+  
+  
+  
+  
+  
+
+
+  rightBtnDiv.addEventListener('click',()=>{
+    const imgs = [mountainImg, computerImg, treesImg, turnTableImg]
+      imgs.forEach((img) => img.style.display ="block")
+  })
+
+  leftBtnDiv.addEventListener('click', ()=>{
+    const current = 0
+    const imgs = [mountainImg, computerImg, treesImg, turnTableImg]
+      imgs.forEach((img) => img.style.display ="block")
+  })
+
+  console.log(carousel);
+
+  return carousel;
+
+
+}
+
+const carouselContainer = document.querySelector('.carousel-container');
+
+carouselContainer.appendChild(carouselComponent());
