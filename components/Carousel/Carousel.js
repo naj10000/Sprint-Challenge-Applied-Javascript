@@ -31,6 +31,7 @@ function carouselComponent(x){
   const computerImg = document.createElement('img');
   const treesImg = document.createElement('img');
   const turnTableImg = document.createElement('img');
+  const current = 0;
 
   /// add classes
 
@@ -46,7 +47,7 @@ function carouselComponent(x){
   computerImg.setAttribute('src', "./assets/carousel/computer.jpeg");
   treesImg.setAttribute('src', "./assets/carousel/trees.jpeg" );
   turnTableImg.setAttribute('src', "./assets/carousel/turntable.jpeg");
-
+  
   //append 
   carousel.append(leftBtnDiv);
   carousel.append(rightBtnDiv);
@@ -56,6 +57,27 @@ function carouselComponent(x){
   carousel.appendChild(computerImg);
   carousel.appendChild(treesImg);
   carousel.appendChild(turnTableImg);
+
+  
+  
+  const imgs = [mountainImg, computerImg, treesImg, turnTableImg]
+  
+  function slideLeft(){
+    imgs[current -1].style.display = 'block';
+    current--;
+  }
+
+
+  rightBtnDiv.addEventListener('click',()=>{
+
+  })
+
+  leftBtnDiv.addEventListener('click', ()=>{
+      if(current ===0){
+        current = imgs.length;
+      }
+      slideLeft();
+  })
 
   console.log(carousel);
 
